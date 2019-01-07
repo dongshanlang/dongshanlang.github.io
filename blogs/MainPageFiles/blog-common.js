@@ -6,7 +6,11 @@ function loadBlogDefaultCalendar()
 (n=/\/archive\/(\d{4}\/\d{2}\/\d{2})\//g.exec(i))?t=n[1]:(n=/\/archive\/(\d{4}\/\d{2}\/\d{2})\./g.exec(i))?t=n[1]:(n=/\/archive\/(\d{4}\/\d{2})./g.exec(i))&&(t=n[1]);
 loadBlogCalendar(t)}}
 
-
+function ifram() {
+    var iwindow = iframe.contentWindow;
+    var idoc = iwindow.document;
+    iframe.height = idoc.body.offsetHeight;
+}
 
 
 
