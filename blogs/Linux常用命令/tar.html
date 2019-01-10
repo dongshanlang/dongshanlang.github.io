@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> 东山郎的博客</title>
+<link type="text/css" rel="stylesheet" href="../MainPageFiles/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="../MainPageFiles/bundle-darkgreentrip.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="../MainPageFiles/bundle-darkgreentrip-mobile.css">
+<script async="" src="../MainPageFiles/analytics.js">
+</script><script src=../MainPageFiles/jquery-2.js"></script>
+<script type="text/javascript">var currentBlogApp = 'zfyouxi', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src=../MainPageFiles/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" ><img id="blogLogo" src="../MainPageFiles/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" >东山郎</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="../MainPage.html">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="../MainPage.html">首页</a></li>
+<li></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="../MainPage.html">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="../MainPage.html">留白</a>
+
+</li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="../MainPage.htm">留白</a></li>
+</ul>
+		<div class="blogStats">
+			
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+<!--done-->
+
+
+<div class="entrylist">
+	
+	<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2">tar</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><div id="article_content" class="article_content">		
+		       	<article>
+					<h2 id="1-%E5%8F%82%E6%95%B0%E6%84%8F%E4%B9%89">1. 参数意义</h2>
+					<p>语法：tar [主选项+辅选项] 文件或目录<br>
+						使用该命令时，主选项必须有，它告诉tar要做什么事情，辅选项是辅助使用的，可以选用。
+						主选项：【一条命令以下5个参数只能有一个】</p>
+					<ul>
+						<li>-c: --create 新建一个压缩文档，即打包</li>
+						<li>-x: --extract,--get解压文件</li>
+						<li>-t: --list,查看压缩文档里的所有内容</li>
+						<li>-r:--append 向压缩文档里追加文件</li>
+						<li>-u:--update 更新原压缩包中的文件</li>
+					</ul>
+					<p>下面的参数是辅助选项,根据需要在压缩或解压档案时可选的。</p>
+					<ul>
+						<li>-z：有gzip属性的</li>
+						<li>-j：有bz2属性的</li>
+						<li>-Z：有compress属性的</li>
+						<li>-v：显示所有过程</li>
+						<li>-O：将文件解开到标准输出</li>
+						<li>-C:切换到指定目录</li>
+						<li>--exclude FILE:在压缩过程中，不要将FILE打包</li>
+					</ul>
+					<p>下面的参数-f是必须的</p>
+					<ul>
+						<li>-f: 使用档案名字，切记，，在f之后要立即接文档名，不要再加其他参数名。</li>
+					</ul>
+					<h2 id="2-%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B">2. 用法实例</h2>
+					<ul>
+						<li>
+							<p>tar -cf all.tar *.jpg
+								这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</p>
+						</li>
+						<li>
+							<p>tar -rf all.tar *.gif
+								这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</p>
+						</li>
+						<li>
+							<p>tar -uf all.tar logo.gif
+								这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</p>
+						</li>
+						<li>
+							<p>tar -tf all.tar
+								这条命令是列出all.tar包中所有文件，-t是列出文件的意思</p>
+						</li>
+						<li>
+							<p>tar -xf all.tar
+								这条命令是解出all.tar包中所有文件，-t是解开的意思</p>
+						</li>
+					</ul>
+					<h3 id="1%E5%8E%8B%E7%BC%A9">1.压缩</h3>
+					<ul>
+						<li>
+							<p>tar -cvf jpg.tar *.jpg //将目录里所有jpg文件打包成jpg.tar</p>
+						</li>
+						<li>
+							<p>tar -czf jpg.tar.gz *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</p>
+						</li>
+						<li>
+							<p>tar -cjf jpg.tar.bz2 *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</p>
+						</li>
+						<li>
+							<p>tar -cZf jpg.tar.Z *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</p>
+						</li>
+						<li>
+							<p>rar a jpg.rar *.jpg //rar格式的压缩，需要先下载rar for linux</p>
+						</li>
+						<li>
+							<p>zip jpg.zip *.jpg //zip格式的压缩，需要先下载zip for linux</p>
+						</li>
+					</ul>
+					<h3 id="2%E8%A7%A3%E5%8E%8B">2.解压</h3>
+					<ul>
+						<li>
+							<p>tar -xvf file.tar //解压 tar包</p>
+						</li>
+						<li>
+							<p>tar -xzvf file.tar.gz //解压tar.gz</p>
+						</li>
+						<li>
+							<p>tar -xjvf file.tar.bz2   //解压 tar.bz2</p>
+						</li>
+						<li>
+							<p>tar -xZvf file.tar.Z   //解压tar.Z</p>
+						</li>
+						<li>
+							<p>unrar e file.rar //解压rar</p>
+						</li>
+						<li>
+							<p>unzip file.zip //解压zip</p>
+						</li>
+					</ul>
+					<h3 id="3%E4%B8%8D%E8%A7%A3%E5%8E%8B%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%9F%A5%E7%9C%8B">3.不解压的情况下查看</h3>
+					<ol>
+						<li>查看img.tar中的所有内容</li>
+					</ol>
+					<pre class="hljs"><code><div>tar -tf img.tar
+</div></code></pre>
+					<ol start="2">
+						<li>加-v参数查看详细信息，-z可有可无</li>
+					</ol>
+					<pre class="hljs"><code><div>tar -tf img.tar.gz
+</div></code></pre>
+					<ol start="3">
+						<li>查看img.tar.bz2内容<br>
+							加-v参数查看详细信息，-j可有可无</li>
+					</ol>
+					<pre class="hljs"><code><div>tar -tf img.tar.bz2
+tar -jtf img.tar.bz2
+</div></code></pre>
+					<h3 id="4%E6%9B%B4%E6%96%B0">4.更新</h3>
+					<p>现在给movies文件下新建一个文件movie2.txt，然后更新enjoy.tar</p>
+					<p>$ tar -cf img.tar img1 img2
+						给img1增加了一张照片，现在用下面命令更新img.tar
+						$ tar -uf img.tar img1</p>
+					<h3 id="5%E8%BF%BD%E5%8A%A0">5.追加</h3>
+					<p>$ tar -cf img.tar img1 img2<br>
+						img.tar里追加一个文件夹img3<br>
+						$ tar -rf img.tar img3</p>
+					<h3 id="6-c%E5%8F%82%E6%95%B0">6.-C参数</h3>
+					<p>-C(大C参数很有用，改变文件目录，多层时用)  -C, --directory=DIR        change to directory DIR</p>
+					<p>使用了-C参数改变目录为-C后面 目录，不管是在打包还是解压都很有用。</p>
+					<p>用法：tar temp.tar file -C fileDir</p>
+					<p>$ cd temp<br>
+						$ ls<br>
+						img1  img2  img3<br>
+						$ tar -cf img.tar temp/*<br>
+						这样打包会将temp目录也打包进去，使用下面带有-C参数的命令可以去掉路径信息<br>
+						$ tar -cf img.tar * -C temp<br>
+						解压img.tar到当前目录下的temp目录<br>
+						$ tar -xf img.tar -C temp</p>
+					<h2 id="%E6%80%BB%E7%BB%93">总结</h2>
+					<ol>
+						<li>
+							<p>*.tar 用 tar -xvf 解压</p>
+						</li>
+						<li>
+							<p>*.gz 用 gzip -d或者gunzip 解压</p>
+						</li>
+						<li>
+							<p><em>.tar.gz和</em>.tgz 用 tar -xzf 解压</p>
+						</li>
+						<li>
+							<p>*.bz2 用 bzip2 -d或者用bunzip2 解压</p>
+						</li>
+						<li>
+							<p>*.tar.bz2用tar -xjf 解压</p>
+						</li>
+						<li>
+							<p>*.Z 用 uncompress 解压</p>
+						</li>
+						<li>
+							<p>*.tar.Z 用tar -xZf 解压</p>
+						</li>
+						<li>
+							<p>*.rar 用 unrar e解压</p>
+						</li>
+						<li>
+							<p>*.zip 用 unzip 解压</p>
+						</li>
+					</ol>
+				
+</article>
+ 
+</div></div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+
+
+
+		</div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=187416,cb_entryId=5413442,cb_blogApp=currentBlogApp,cb_blogUserGuid='1cc61568-c8e6-e311-8d02-90b11c0b17d6',cb_entryCreatedDate='2016/4/20 16:57:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+	
+	
+	<p>
+	
+	</p>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div id="blog-calendar" style="">
+<table id="blogCalendar" class="Cal" title="Calendar" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+	<td colspan="7">
+		<div id="show_time">  
+<script>  
+//这里代码多了几行，但是不会延迟显示，速度比较好，格式可以自定义，是理想的时间显示
+setInterval("fun(show_time)",1);
+function fun(timeID){ 
+var date = new Date();  //创建对象  
+var y = date.getFullYear();     //获取年份  
+var m =date.getMonth()+1;   //获取月份  返回0-11  
+var d = date.getDate(); // 获取日  
+var w = date.getDay();   //获取星期几  返回0-6   (0=星期天) 
+var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay()) ;//星期几
+var h = date.getHours();  //时
+var minute = date.getMinutes()  //分
+var s = date.getSeconds(); //秒
+var sss = date.getMilliseconds() ; //毫秒
+if(m<10){
+m = "0"+m;
+}
+if(d<10){
+d = "0"+d;
+}
+if(h<10){
+h = "0"+h;
+}
+ 
+if(minute<10){
+minute = "0"+minute;
+}
+ 
+if(s<10){
+s = "0"+s;
+}
+ 
+if(sss<10){
+sss = "00"+sss;
+}else if(sss<100){
+sss = "0"+sss;
+}
+document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s+ww;
+  }
+</script>  
+</div>
+</table>
+</div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block"></div><div id="sidebar_categories">
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+<iframe name="content_iframe" marginwidth=0 marginheight=0 width=100% height="800" scrolling="auto" src="../common_function.html"  frameborder=0  >
+</iframe> 
+
+</div>
+
+</div>
+
+
+<div id="sidebar_topviewedposts" class="sidebar-block">
+
+</div>
+<script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div>
+		<!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 dongshanlang
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+</body></html>
