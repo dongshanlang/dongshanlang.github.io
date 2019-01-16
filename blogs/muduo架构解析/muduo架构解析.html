@@ -82,8 +82,8 @@
 </blockquote>
 
 <p>    我们可以知道，Reactor模式的基础是事件驱动，事件源可以有多个，并且会并发地产生事件。Reactor模式的核心是一个事件分发器
-和多个事件处理器，多个事件源向事件分发器发送事件，并要求事件分发器响应，reactor模式的设计难点也是在事件分发器，它必须能够有条不紊地把响应
-时间分派到合适的事件处理器中，保证事件处理的最小延迟。事件处理器主要是负责处理事件的业务逻辑，这是关系到具体事件的核心，因此和事件分发器不一样，
+和多个事件处理器，多个事件源向事件分发器发送事件，并要求事件分发器响应，reactor模式的设计难点也是在事件分发器，它必须能够有条不紊地把相应
+事件分派到合适的事件处理器中，保证事件处理的最小延迟。事件处理器主要是负责处理事件的业务逻辑，这是关系到具体事件的核心，因此和事件分发器不一样，
 它并不太具有一般性。</p>
 
 <p><img src="20170223162021284.jpeg" alt="这里写图片描述" title="" ></p>
@@ -180,11 +180,11 @@ TcpConnection后其会自动处理。之所以加了TcpConnection这一层是为
 网络库内部将数据分批::write给peer， 
 TcpConnection就实现了这一点，它内部维护一个应用层的inputBuffer和outputBuffer保证数据的可靠发送，同时再连接断
 开时也能保证数据发送完成后再断开。</span></p>
-<p><span style="font-size: 16px">　　Accepter用来接受连接，其内是维护一个listenfd及其对应的
+<p><span style="font-size: 16px">　　Acceptor用来接受连接，其内是维护一个listenfd及其对应的
 channel， 他会对listenfd进行一些初始化操作例如::bind, 
 ::listen，然后就调用channel的方法注册到事件循环中，事件产生后回调其handleRead进行accept连接，然后调用上层注册的
-newConnectonCallback回调函数。Accepter是个内部类它属于一个TcpServer, 
-&nbsp;Accepter::newConnectionCallback的实例就是由TcpServer进行注册的， 
+newConnectonCallback回调函数。Acceptor是个内部类它属于一个TcpServer,
+&nbsp;Acceptor::newConnectionCallback的实例就是由TcpServer进行注册的，
 连接产生后TcpServer主要对这个连接创建一个TcpConnection对象并设置好其对应的回调函数，TcpServer维护一个
 TcpConnection的map来管理连接到他的client, 
 TcpSever通过线程池来处理并发请求，线程池内是多个IO线程也就是多个EvenLoop，每个连接到来回自动分配到其中一个来创建
